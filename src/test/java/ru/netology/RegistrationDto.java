@@ -2,11 +2,7 @@ package ru.netology;
 
 import lombok.*;
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-@Getter
-@Setter
+@Value
 
 public class RegistrationDto {
     String login;
