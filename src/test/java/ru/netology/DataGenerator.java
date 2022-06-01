@@ -39,16 +39,6 @@ public class DataGenerator {
                     .statusCode(200);
         }
 
-        public static String getRandomLogin() {
-            String login = faker.name().username();
-            return login;
-        }
-
-        public static String getRandomPassword() {
-            String password = faker.internet().password();
-            return password;
-        }
-
         public static RegistrationDto getUser(String status) {
             RegistrationDto user = new RegistrationDto(getRandomLogin(), getRandomPassword(), status);
             return user;
@@ -59,6 +49,18 @@ public class DataGenerator {
             sendRequest(registeredUser);
             return registeredUser;
         }
+    }
+
+    public static String getRandomLogin() {
+        Faker faker = new Faker(new Locale("en"));
+        String login = faker.name().username();
+        return login;
+    }
+
+    public static String getRandomPassword() {
+        Faker faker = new Faker(new Locale("en"));
+        String password = faker.internet().password();
+        return password;
     }
 
     @Value
