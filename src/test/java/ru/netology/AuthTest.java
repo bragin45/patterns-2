@@ -32,7 +32,8 @@ public class AuthTest {
         $x("//input[@type='text']").val(user.getLogin());
         $x("//input[@type='password']").val(user.getPassword());
         $x("//span[@class='button__text']").click();
-        $x("//div[@class='notification__content']").should(Condition.visible, Duration.ofSeconds(10));
+        $x("//div[@class='notification__content']")
+                .shouldHave(Condition.text("Ошибка! Пользователь заблокирован"), Duration.ofSeconds(10));
     }
 
     @Test
